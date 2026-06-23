@@ -354,11 +354,11 @@ export default function App() {
                   <p className="text-sm font-tech text-gray-400 leading-relaxed">{item.desc}</p>
                 </div>
                 {item.logo && (
-                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-white/5 border border-cyan-500/15 p-2 flex items-center justify-center backdrop-blur-sm self-start md:self-center">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-white border border-cyan-500/15 p-1.5 flex items-center justify-center shadow-md self-start md:self-center overflow-hidden">
                     <img 
                       src={item.logo} 
                       alt={item.company} 
-                      className="max-w-full max-h-full object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]"
+                      className="max-w-full max-h-full object-contain mix-blend-multiply scale-95"
                     />
                   </div>
                 )}
