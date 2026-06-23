@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, MapPin, Send, Cpu, Award, Briefcase, FileCode } from 'lucide-react';
 import { motion } from 'framer-motion';
 import profileImg from './assets/profile.jpg';
+import nitcLogo from './assets/nitc_logo.png';
 
 export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -75,7 +76,7 @@ export default function App() {
       role: 'Summer Research Intern (Anti-Drone System)',
       company: 'NIT Calicut',
       period: 'Summer 2026',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/National_Institute_of_Technology%2C_Calicut_Logo.svg/1200px-National_Institute_of_Technology%2C_Calicut_Logo.svg.png',
+      logo: nitcLogo,
       desc: 'Conducted research and development on advanced anti-drone mitigation systems, analyzing radio frequency telemetry signals and tracking parameters.',
       type: 'internship'
     },
@@ -83,7 +84,7 @@ export default function App() {
       role: 'Project Intern (Fingerprint-Enabled EVM)',
       company: 'NIT Calicut',
       period: '2026',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/National_Institute_of_Technology%2C_Calicut_Logo.svg/1200px-National_Institute_of_Technology%2C_Calicut_Logo.svg.png',
+      logo: nitcLogo,
       desc: 'Designed and prototyped biometric authentication mechanisms for electronic voting machines, linking sensor validation registers with secure memory storage chips.',
       type: 'internship'
     },
