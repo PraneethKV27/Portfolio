@@ -75,6 +75,7 @@ export default function App() {
       role: 'Summer Research Intern (Anti-Drone System)',
       company: 'NIT Calicut',
       period: 'Summer 2026',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/National_Institute_of_Technology%2C_Calicut_Logo.svg/1200px-National_Institute_of_Technology%2C_Calicut_Logo.svg.png',
       desc: 'Conducted research and development on advanced anti-drone mitigation systems, analyzing radio frequency telemetry signals and tracking parameters.',
       type: 'internship'
     },
@@ -82,6 +83,7 @@ export default function App() {
       role: 'Project Intern (Fingerprint-Enabled EVM)',
       company: 'NIT Calicut',
       period: '2026',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/National_Institute_of_Technology%2C_Calicut_Logo.svg/1200px-National_Institute_of_Technology%2C_Calicut_Logo.svg.png',
       desc: 'Designed and prototyped biometric authentication mechanisms for electronic voting machines, linking sensor validation registers with secure memory storage chips.',
       type: 'internship'
     },
@@ -341,13 +343,24 @@ export default function App() {
                 {item.type === 'internship' ? <Briefcase className="w-3.5 h-3.5 text-cyan-400" /> : <Award className="w-3.5 h-3.5 text-purple-400" />}
               </div>
 
-              <div className="glass-panel p-6 rounded-xl border-cyan-500/10">
-                <span className="text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 rounded-md uppercase tracking-wider font-semibold">
-                  {item.period}
-                </span>
-                <h3 className="font-cyber font-bold text-gray-100 text-lg mt-3 uppercase tracking-wider">{item.role}</h3>
-                <h4 className="font-tech text-cyan-400 font-medium text-base mb-2">{item.company}</h4>
-                <p className="text-sm font-tech text-gray-400 leading-relaxed">{item.desc}</p>
+              <div className="glass-panel p-6 rounded-xl border-cyan-500/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                  <span className="text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 rounded-md uppercase tracking-wider font-semibold">
+                    {item.period}
+                  </span>
+                  <h3 className="font-cyber font-bold text-gray-100 text-lg mt-3 uppercase tracking-wider">{item.role}</h3>
+                  <h4 className="font-tech text-cyan-400 font-medium text-base mb-2">{item.company}</h4>
+                  <p className="text-sm font-tech text-gray-400 leading-relaxed">{item.desc}</p>
+                </div>
+                {item.logo && (
+                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-white/5 border border-cyan-500/15 p-2 flex items-center justify-center backdrop-blur-sm self-start md:self-center">
+                    <img 
+                      src={item.logo} 
+                      alt={item.company} 
+                      className="max-w-full max-h-full object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.4)]"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}
