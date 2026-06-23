@@ -72,6 +72,20 @@ export default function App() {
 
   const timeline = [
     {
+      role: 'Summer Research Intern (Anti-Drone System)',
+      company: 'NIT Calicut',
+      period: 'Summer 2026',
+      desc: 'Conducted research and development on advanced anti-drone mitigation systems, analyzing radio frequency telemetry signals and tracking parameters.',
+      type: 'internship'
+    },
+    {
+      role: 'Project Intern (Fingerprint-Enabled EVM)',
+      company: 'NIT Calicut',
+      period: '2026',
+      desc: 'Designed and prototyped biometric authentication mechanisms for electronic voting machines, linking sensor validation registers with secure memory storage chips.',
+      type: 'internship'
+    },
+    {
       role: 'Documentation Team Lead',
       company: 'ISTE Champs (SVEC & MBU) - MOHAN BABU UNIVERSITY',
       period: 'Sep 2025 - Present',
