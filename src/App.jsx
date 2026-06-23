@@ -173,22 +173,22 @@ export default function App() {
 
           <div className="lg:col-span-5 flex justify-center">
             {/* Holographic Profile card */}
-            <div className="w-64 h-80 glass-panel rounded-3xl p-4 relative overflow-hidden border-cyan-400/30 shadow-glow-cyan flex flex-col justify-center items-center">
+            <div className="w-80 h-96 glass-panel rounded-3xl p-6 relative overflow-hidden border-cyan-400/30 shadow-glow-cyan flex flex-col justify-center items-center">
               <div className="absolute top-0 left-0 w-full h-full bg-cyan-500/5 backdrop-blur-[2px] -z-10"></div>
               
               {/* Corner tech accents */}
-              <div className="absolute top-4 left-4 w-5 h-5 border-t-2 border-l-2 border-cyan-400 opacity-60"></div>
-              <div className="absolute top-4 right-4 w-5 h-5 border-t-2 border-r-2 border-cyan-400 opacity-60"></div>
-              <div className="absolute bottom-4 left-4 w-5 h-5 border-b-2 border-l-2 border-cyan-400 opacity-60"></div>
-              <div className="absolute bottom-4 right-4 w-5 h-5 border-b-2 border-r-2 border-cyan-400 opacity-60"></div>
+              <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-cyan-400 opacity-60"></div>
+              <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-cyan-400 opacity-60"></div>
+              <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-cyan-400 opacity-60"></div>
+              <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-cyan-400 opacity-60"></div>
 
               <div className="text-center">
-                <div className="w-40 h-40 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto flex items-center justify-center p-0.5 shadow-glow-cyan relative overflow-hidden">
+                <div className="w-36 h-36 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto flex items-center justify-center p-0.5 shadow-glow-cyan relative overflow-hidden">
                   <div className="w-full h-full bg-gray-950 rounded-full overflow-hidden flex items-center justify-center">
                     <img 
                       src={profileImg} 
                       alt="Kornipalli Venkatesh Praneeth" 
-                      className="w-full h-full object-cover scale-[2.7] object-[center_35%]"
+                      className="w-full h-full object-cover scale-[1.1]"
                     />
                   </div>
                 </div>
