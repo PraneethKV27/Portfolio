@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, Cpu, Award, Briefcase, FileCode } from 'lucide-react';
 import { motion } from 'framer-motion';
+import profileImg from './assets/profile.jpg';
 
 export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -182,9 +183,13 @@ export default function App() {
               <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-cyan-400 opacity-60"></div>
 
               <div className="text-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto flex items-center justify-center p-0.5 shadow-glow-cyan relative">
-                  <div className="w-full h-full bg-gray-950 rounded-full flex items-center justify-center">
-                    <Cpu className="w-16 h-16 text-cyan-400 animate-pulse" />
+                <div className="w-36 h-36 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 mx-auto flex items-center justify-center p-0.5 shadow-glow-cyan relative overflow-hidden">
+                  <div className="w-full h-full bg-gray-950 rounded-full overflow-hidden flex items-center justify-center">
+                    <img 
+                      src={profileImg} 
+                      alt="Kornipalli Venkatesh Praneeth" 
+                      className="w-full h-full object-cover scale-105"
+                    />
                   </div>
                 </div>
               </div>

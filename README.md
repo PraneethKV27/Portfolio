@@ -1,16 +1,36 @@
-# React + Vite
+# Futuristic ECE Interactive Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the interactive portfolio landing page of **Kornipalli Venkatesh Praneeth**, an Electronics & Communication Engineering student specializing in Embedded Systems, IoT, Robotics, and VLSI.
 
-Currently, two official plugins are available:
+Built using React, Tailwind CSS, Framer Motion, and HTML5 Canvas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Key Features
 
-## React Compiler
+* **ECE Bootloader Screen**: Animated microchip booting diagnostics terminal validating ECE modules.
+* **Canvas PCB Trace Network**: High-performance layout background rendering live, glowing traces on 45/90° angles.
+* **Interactive AI Assistant**: Roaming vector assistant floating smoothly, tracking the mouse pointer, waving, and speaking welcoming ECE details. Double-tapping locks/releases it.
+* **Cursor Electric Spark Trails**: Throttled spark emission trailing user mouse movements.
+* **Schematic Electronics Showcase**: Hover catalog containing datasheets and interface protocol metrics for components (Arduino, ESP32, Raspberry Pi).
+* **Ambient Sound Synthesizer**: Low 60Hz ambient hum toggled in the header menu using custom AudioContext APIs.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Tech Stack
 
-## Expanding the ESLint configuration
+* **Frontend Framework**: React 18, Vite
+* **Styling**: Tailwind CSS
+* **Animations**: Framer Motion, HTML5 Canvas
+* **Icons**: Lucide React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Local Development
+
+Clone the repository and install the dependencies:
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
