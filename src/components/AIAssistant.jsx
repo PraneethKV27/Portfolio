@@ -17,6 +17,9 @@ export default function AIAssistant() {
     "⚡ Circuit traces on the background are active! They respond to page flow!"
   ];
 
+  const [isFollowing, setIsFollowing] = useState(false);
+  const isFollowingRef = useRef(false);
+
   useEffect(() => {
     // Intermittent roaming path finder loop
     const moveInterval = setInterval(() => {
@@ -33,15 +36,27 @@ export default function AIAssistant() {
         setSpeech(true);
         setTimeout(() => setSpeech(false), 6000);
       }
-    }, 8000);
+
+      // Roam randomly ONLY if NOT following the cursor
+      if (!isFollowingRef.current) {
+        const maxX = window.innerWidth - 200;
+        const maxY = window.innerHeight - 220;
+        targetPos.current = {
+          x: Math.max(50, Math.random() * maxX),
+          y: Math.max(window.innerHeight - 400, Math.random() * maxY)
+        };
+      }
+    }, 5000);
 
     const mouseTracker = (e) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
-      // Move targetPos to follow mouse cursor with a slight delay offset (e.g. 40px right, 40px down)
-      targetPos.current = { 
-        x: Math.min(window.innerWidth - 100, Math.max(20, e.clientX + 40)), 
-        y: Math.min(window.innerHeight - 100, Math.max(20, e.clientY + 40)) 
-      };
+      // Move targetPos to follow mouse cursor ONLY if active
+      if (isFollowingRef.current) {
+        targetPos.current = { 
+          x: Math.min(window.innerWidth - 100, Math.max(20, e.clientX + 40)), 
+          y: Math.min(window.innerHeight - 100, Math.max(20, e.clientY + 40)) 
+        };
+      }
     };
 
     window.addEventListener('mousemove', mouseTracker);
@@ -105,14 +120,24 @@ export default function AIAssistant() {
         </div>
       )}
 
-      {/* Interactive Floating Robot Assistant */}
       <div 
         className="relative flex flex-col items-center justify-center cursor-pointer group"
-        onClick={() => {
+        onClick={(e) => {
+          e.stopPropagation();
           setIsWaving(true);
-          setSpeechText("👋 Hello! Thanks for clicking me. I hope you enjoy the experience!");
+          setTimeout(() => setIsWaving(false), 2000);
+
+          const nextFollowing = !isFollowing;
+          setIsFollowing(nextFollowing);
+          isFollowingRef.current = nextFollowing;
+
+          if (nextFollowing) {
+            setSpeechText("🎯 LOCKED ON CURSOR!\nI will now follow your movement.");
+          } else {
+            setSpeechText("👋 RELEASED!\nGoing back to autonomous exploration mode.");
+          }
           setSpeech(true);
-          setTimeout(() => setIsWaving(false), 2500);
+          setTimeout(() => setSpeech(false), 4000);
         }}
       >
         {/* Floating Ring Effect */}

@@ -44,12 +44,12 @@ export default function App() {
       icon: '🗳️'
     },
     {
-      title: 'IoT Based Monitoring System',
-      desc: 'Real-time environment telemetry system sending analog and digital sensor feedback directly to an AWS IoT Core server node, accessible via an interactive dashboard panel.',
-      tech: ['Arduino Uno', 'ESP8266', 'Sensors', 'AWS Cloud'],
-      github: '#',
-      live: '#',
-      icon: '🌡️'
+      title: 'Climate Tech - Ecoo Monitor',
+      desc: 'Real-time climate tracking and environmental monitoring hub integrating hardware-to-cloud interfaces for atmospheric metrics analysis.',
+      tech: ['ESP32', 'Sensors', 'Cloud', 'Website'],
+      github: 'https://github.com/PraneethKV27/ecoo-monitor',
+      live: 'https://github.com/PraneethKV27/ecoo-monitor/blob/main/README.md',
+      icon: '🌱'
     },
     {
       title: 'Embedded Automation Project',
