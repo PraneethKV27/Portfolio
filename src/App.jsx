@@ -3,6 +3,7 @@ import { Mail, MapPin, Send, Cpu, Award, Briefcase, FileCode } from 'lucide-reac
 import { motion } from 'framer-motion';
 import profileImg from './assets/profile.jpg';
 import nitcLogo from './assets/nitc_logo.png';
+import isteLogo from './assets/iste_logo.png';
 
 export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -93,6 +94,7 @@ export default function App() {
       role: 'Documentation Team Lead',
       company: 'ISTE Champs (SVEC & MBU) - MOHAN BABU UNIVERSITY',
       period: 'Sep 2025 - Present',
+      logo: isteLogo,
       desc: 'Responsible for creating, curating, and managing all official records, reports, and content for ISTE activities and events, ensuring professional record-keeping and communications.',
       type: 'leadership'
     },
@@ -100,6 +102,7 @@ export default function App() {
       role: 'Web Development Team Member',
       company: 'ISTE Champs (SVEC & MBU) - Mohan Babu University',
       period: 'Feb 2025 - Present',
+      logo: isteLogo,
       desc: 'Collaborating on layout design, UI implementation, and deploying features for student portal web solutions combining human and AI collaboration tooling.',
       type: 'internship'
     },
@@ -107,6 +110,7 @@ export default function App() {
       role: 'Coordinator',
       company: 'ISTE Champs (SVEC & MBU) - MOHAN BABU UNIVERSITY',
       period: 'Dec 2024 - Present',
+      logo: isteLogo,
       desc: 'Coordinating events, management pipelines, and team tasks to ensure smooth execution of university technological society workshops.',
       type: 'leadership'
     }
