@@ -338,30 +338,30 @@ export default function App() {
         </div>
 
         {/* Tab Switcher */}
-        <div className="flex justify-center gap-4 mb-12 max-w-md mx-auto">
+        <div className="flex justify-center gap-3 mb-10 max-w-sm mx-auto">
           <button
             onClick={() => setActiveExpTab('nit')}
-            className={`flex-1 py-3 px-4 rounded-xl font-cyber font-bold tracking-wider text-xs border uppercase transition-all duration-300 cursor-pointer ${
+            className={`flex-1 py-2.5 px-3 rounded-lg font-cyber font-bold tracking-wider text-[10px] sm:text-xs border uppercase transition-all duration-300 cursor-pointer ${
               activeExpTab === 'nit'
                 ? 'bg-cyan-500 text-gray-950 border-cyan-400 shadow-glow-cyan'
                 : 'border-cyan-500/20 hover:border-cyan-400/50 hover:bg-cyan-500/5 text-cyan-400'
             }`}
           >
-            NIT Calicut Internships
+            NIT Calicut
           </button>
           <button
             onClick={() => setActiveExpTab('iste')}
-            className={`flex-1 py-3 px-4 rounded-xl font-cyber font-bold tracking-wider text-xs border uppercase transition-all duration-300 cursor-pointer ${
+            className={`flex-1 py-2.5 px-3 rounded-lg font-cyber font-bold tracking-wider text-[10px] sm:text-xs border uppercase transition-all duration-300 cursor-pointer ${
               activeExpTab === 'iste'
                 ? 'bg-purple-500 text-gray-950 border-purple-400 shadow-glow-purple'
                 : 'border-purple-500/20 hover:border-purple-400/50 hover:bg-purple-500/5 text-purple-300'
             }`}
           >
-            ISTE MBU Roles
+            ISTE MBU
           </button>
         </div>
 
-        <div className="relative border-l border-cyan-500/20 max-w-3xl mx-auto pl-6 sm:pl-8">
+        <div className="relative border-l border-cyan-500/25 max-w-3xl mx-auto pl-6 sm:pl-8">
           {timeline
             .filter((item) => {
               if (activeExpTab === 'nit') {
@@ -371,27 +371,27 @@ export default function App() {
               }
             })
             .map((item, i) => (
-              <div key={i} className="mb-12 relative">
+              <div key={i} className="mb-6 relative">
                 {/* Timeline marker */}
-                <div className="absolute -left-[35px] top-1.5 w-6 h-6 rounded-full bg-gray-950 border border-cyan-400 flex items-center justify-center shadow-glow-cyan">
-                  {item.type === 'internship' ? <Briefcase className="w-3.5 h-3.5 text-cyan-400" /> : <Award className="w-3.5 h-3.5 text-purple-400" />}
+                <div className="absolute -left-[31px] sm:-left-[35px] top-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gray-950 border border-cyan-400 flex items-center justify-center shadow-glow-cyan">
+                  {item.type === 'internship' ? <Briefcase className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400" /> : <Award className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-purple-400" />}
                 </div>
 
-                <div className="glass-panel p-6 rounded-xl border-cyan-500/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                  <div>
-                    <span className="text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 rounded-md uppercase tracking-wider font-semibold">
+                <div className="glass-panel p-4 rounded-xl border-cyan-500/10 hover:border-cyan-400/30 hover:shadow-glow-cyan/5 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                  <div className="flex-1">
+                    <span className="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 rounded uppercase tracking-wider font-semibold">
                       {item.period}
                     </span>
-                    <h3 className="font-cyber font-bold text-gray-100 text-lg mt-3 uppercase tracking-wider">{item.role}</h3>
-                    <h4 className="font-tech text-cyan-400 font-medium text-base mb-2">{item.company}</h4>
-                    <p className="text-sm font-tech text-gray-400 leading-relaxed">{item.desc}</p>
+                    <h3 className="font-cyber font-bold text-gray-100 text-sm sm:text-base mt-2 uppercase tracking-wider">{item.role}</h3>
+                    <h4 className="font-tech text-cyan-400 font-medium text-xs sm:text-sm mb-1.5">{item.company}</h4>
+                    <p className="text-xs font-tech text-gray-400 leading-relaxed max-w-2xl">{item.desc}</p>
                   </div>
                   {item.logo && (
-                    <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-white border border-cyan-500/15 p-1.5 flex items-center justify-center shadow-md self-start md:self-center overflow-hidden">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white border border-cyan-500/15 p-1 flex items-center justify-center shadow-md self-start sm:self-center overflow-hidden">
                       <img 
                         src={item.logo} 
                         alt={item.company} 
-                        className="max-w-full max-h-full object-contain mix-blend-multiply scale-95"
+                        className="max-w-full max-h-full object-contain mix-blend-multiply scale-90"
                       />
                     </div>
                   )}
