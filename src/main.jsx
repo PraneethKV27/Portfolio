@@ -72,7 +72,7 @@ function Main() {
       />
       <PCBBackground />
       <SparkCursor />
-      <App activeSection={activeSection} />
+      <App activeSection={activeSection} setActiveSection={setActiveSection} />
       <AIAssistant />
     </>
   );

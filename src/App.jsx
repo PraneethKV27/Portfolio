@@ -6,7 +6,7 @@ import nitcLogo from './assets/nitc_logo.png';
 import isteLogo from './assets/iste_logo.png';
 import Showcase from './components/Showcase.jsx';
 
-export default function App({ activeSection }) {
+export default function App({ activeSection, setActiveSection }) {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -160,13 +160,23 @@ export default function App({ activeSection }) {
           <div className="mt-10 flex flex-wrap gap-4">
             <a 
               href="#showcase" 
-              className="px-8 py-3.5 rounded-lg font-cyber font-bold tracking-wider text-sm bg-cyan-500 text-gray-950 hover:bg-cyan-400 shadow-glow-cyan hover:shadow-cyan-400/50 transition-all duration-300 border border-cyan-300/40 uppercase"
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveSection('showcase');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="px-8 py-3.5 rounded-lg font-cyber font-bold tracking-wider text-sm bg-cyan-500 text-gray-950 hover:bg-cyan-400 shadow-glow-cyan hover:shadow-cyan-400/50 transition-all duration-300 border border-cyan-300/40 uppercase cursor-pointer"
             >
               Explore My Work
             </a>
             <a 
               href="#contact" 
-              className="px-8 py-3.5 rounded-lg font-cyber font-bold tracking-wider text-sm border border-purple-500/30 hover:border-purple-400 hover:bg-purple-500/10 text-purple-300 hover:text-glow-purple shadow-glow-purple/20 transition-all duration-300 uppercase"
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveSection('contact');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="px-8 py-3.5 rounded-lg font-cyber font-bold tracking-wider text-sm border border-purple-500/30 hover:border-purple-400 hover:bg-purple-500/10 text-purple-300 hover:text-glow-purple shadow-glow-purple/20 transition-all duration-300 uppercase cursor-pointer"
             >
               Download Resume
             </a>
