@@ -7,12 +7,12 @@ import PCBBackground from './components/PCBBackground.jsx'
 import AIAssistant from './components/AIAssistant.jsx'
 import SparkCursor from './components/SparkCursor.jsx'
 import Navbar from './components/Navbar.jsx'
-import Showcase from './components/Showcase.jsx'
 
 function Main() {
   const [loading, setLoading] = useState(true);
   const [audioPlaying, setAudioPlaying] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
+  const [activeSection, setActiveSection] = useState('home');
 
   // Set up low ambient oscillator background hum for premium ECE aesthetic
   const audioContextRef = useRef(null);
@@ -63,6 +63,8 @@ function Main() {
   return (
     <>
       <Navbar 
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
         toggleAudio={toggleAudio} 
         audioPlaying={audioPlaying} 
         toggleDarkMode={toggleDarkMode} 
@@ -70,8 +72,7 @@ function Main() {
       />
       <PCBBackground />
       <SparkCursor />
-      <App />
-      <Showcase />
+      <App activeSection={activeSection} />
       <AIAssistant />
     </>
   );

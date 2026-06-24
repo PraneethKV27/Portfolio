@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import profileImg from './assets/profile.jpg';
 import nitcLogo from './assets/nitc_logo.png';
 import isteLogo from './assets/iste_logo.png';
+import Showcase from './components/Showcase.jsx';
 
-export default function App() {
+export default function App({ activeSection }) {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -128,9 +129,9 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen text-gray-100 cyber-grid select-none overflow-x-hidden">
+    <div className="relative min-h-screen text-gray-100 cyber-grid select-none overflow-x-hidden pt-20">
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pt-20">
+      <section id="home" className={`min-h-[calc(100vh-80px)] flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ${activeSection === 'home' ? 'block' : 'hidden'}`}>
         <div className="z-10 text-left max-w-3xl">
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
@@ -174,7 +175,7 @@ export default function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyan-500/10">
+      <section id="about" className={`py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ${activeSection === 'about' ? 'block' : 'hidden'}`}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <h2 className="text-3xl font-cyber text-glow-cyan text-cyan-400 font-extrabold uppercase tracking-widest mb-6">
@@ -217,7 +218,7 @@ export default function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyan-500/10">
+      <section id="skills" className={`py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ${activeSection === 'skills' ? 'block' : 'hidden'}`}>
         <div className="text-center mb-16">
           <h2 className="text-3xl font-cyber text-glow-cyan text-cyan-400 font-extrabold uppercase tracking-widest">
             Skills Inventory
@@ -288,8 +289,13 @@ export default function App() {
         </div>
       </section>
 
+      {/* Showcase Section */}
+      <div className={activeSection === 'showcase' ? 'block' : 'hidden'}>
+        <Showcase />
+      </div>
+
       {/* Projects Section */}
-      <section id="projects" className="py-24 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyan-500/10">
+      <section id="projects" className={`py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ${activeSection === 'projects' ? 'block' : 'hidden'}`}>
         <div className="text-center mb-16">
           <h2 className="text-3xl font-cyber text-glow-cyan text-cyan-400 font-extrabold uppercase tracking-widest">
             Hardware & Software Projects
@@ -331,7 +337,7 @@ export default function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-24 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyan-500/10">
+      <section id="experience" className={`py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ${activeSection === 'experience' ? 'block' : 'hidden'}`}>
         <div className="text-center mb-16">
           <h2 className="text-3xl font-cyber text-glow-cyan text-cyan-400 font-extrabold uppercase tracking-widest">
             Timeline & Experience
@@ -409,7 +415,7 @@ export default function App() {
       </section>
 
       {/* Certifications & Achievements Section */}
-      <section id="certifications" className="py-24 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyan-500/10">
+      <section id="certifications" className={`py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ${activeSection === 'certifications' ? 'block' : 'hidden'}`}>
         <div className="text-center mb-16">
           <h2 className="text-3xl font-cyber text-glow-cyan text-cyan-400 font-extrabold uppercase tracking-widest">
             Certifications
@@ -438,7 +444,7 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-cyan-500/10">
+      <section id="contact" className={`py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto ${activeSection === 'contact' ? 'block' : 'hidden'}`}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <h2 className="text-3xl font-cyber text-glow-cyan text-cyan-400 font-extrabold uppercase tracking-widest mb-6">
