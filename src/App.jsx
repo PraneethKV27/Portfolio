@@ -341,7 +341,7 @@ export default function App() {
         <div className="flex justify-center gap-3 mb-10 max-w-sm mx-auto">
           <button
             onClick={() => setActiveExpTab('nit')}
-            className={`flex-1 py-2.5 px-3 rounded-lg font-cyber font-bold tracking-wider text-[10px] sm:text-xs border uppercase transition-all duration-300 cursor-pointer ${
+            className={`flex-1 py-2.5 px-3 rounded-2xl font-cyber font-bold tracking-wider text-[10px] sm:text-xs border uppercase transition-all duration-300 cursor-pointer ${
               activeExpTab === 'nit'
                 ? 'bg-cyan-500 text-gray-950 border-cyan-400 shadow-glow-cyan'
                 : 'border-cyan-500/20 hover:border-cyan-400/50 hover:bg-cyan-500/5 text-cyan-400'
@@ -351,7 +351,7 @@ export default function App() {
           </button>
           <button
             onClick={() => setActiveExpTab('iste')}
-            className={`flex-1 py-2.5 px-3 rounded-lg font-cyber font-bold tracking-wider text-[10px] sm:text-xs border uppercase transition-all duration-300 cursor-pointer ${
+            className={`flex-1 py-2.5 px-3 rounded-2xl font-cyber font-bold tracking-wider text-[10px] sm:text-xs border uppercase transition-all duration-300 cursor-pointer ${
               activeExpTab === 'iste'
                 ? 'bg-purple-500 text-gray-950 border-purple-400 shadow-glow-purple'
                 : 'border-purple-500/20 hover:border-purple-400/50 hover:bg-purple-500/5 text-purple-300'
@@ -377,7 +377,7 @@ export default function App() {
                   {item.type === 'internship' ? <Briefcase className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-cyan-400" /> : <Award className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-purple-400" />}
                 </div>
 
-                <div className="glass-panel p-4 rounded-xl border-cyan-500/10 hover:border-cyan-400/30 hover:shadow-glow-cyan/5 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                <div className="glass-panel p-4 rounded-3xl border-cyan-500/10 hover:border-cyan-400/30 hover:shadow-glow-cyan/5 transition-all duration-300 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                   <div className="flex-1">
                     <span className="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 rounded uppercase tracking-wider font-semibold">
                       {item.period}
@@ -387,7 +387,7 @@ export default function App() {
                     <p className="text-xs font-tech text-gray-400 leading-relaxed max-w-2xl">{item.desc}</p>
                   </div>
                   {item.logo && (
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-white border border-cyan-500/15 p-1 flex items-center justify-center shadow-md self-start sm:self-center overflow-hidden">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-white border border-cyan-500/15 p-1 flex items-center justify-center shadow-md self-start sm:self-center overflow-hidden">
                       <img 
                         src={item.logo} 
                         alt={item.company} 
