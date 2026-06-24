@@ -8,6 +8,7 @@ export default function App() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [activeExpTab, setActiveExpTab] = useState('nit');
 
   const stats = [
     { label: 'Projects Completed', val: 12 },
@@ -336,35 +337,67 @@ export default function App() {
           </p>
         </div>
 
-        <div className="relative border-l border-cyan-500/20 max-w-3xl mx-auto pl-6 sm:pl-8">
-          {timeline.map((item, i) => (
-            <div key={i} className="mb-12 relative">
-              {/* Timeline marker */}
-              <div className="absolute -left-[35px] top-1.5 w-6 h-6 rounded-full bg-gray-950 border border-cyan-400 flex items-center justify-center shadow-glow-cyan">
-                {item.type === 'internship' ? <Briefcase className="w-3.5 h-3.5 text-cyan-400" /> : <Award className="w-3.5 h-3.5 text-purple-400" />}
-              </div>
+        {/* Tab Switcher */}
+        <div className="flex justify-center gap-4 mb-12 max-w-md mx-auto">
+          <button
+            onClick={() => setActiveExpTab('nit')}
+            className={`flex-1 py-3 px-4 rounded-xl font-cyber font-bold tracking-wider text-xs border uppercase transition-all duration-300 cursor-pointer ${
+              activeExpTab === 'nit'
+                ? 'bg-cyan-500 text-gray-950 border-cyan-400 shadow-glow-cyan'
+                : 'border-cyan-500/20 hover:border-cyan-400/50 hover:bg-cyan-500/5 text-cyan-400'
+            }`}
+          >
+            NIT Calicut Internships
+          </button>
+          <button
+            onClick={() => setActiveExpTab('iste')}
+            className={`flex-1 py-3 px-4 rounded-xl font-cyber font-bold tracking-wider text-xs border uppercase transition-all duration-300 cursor-pointer ${
+              activeExpTab === 'iste'
+                ? 'bg-purple-500 text-gray-950 border-purple-400 shadow-glow-purple'
+                : 'border-purple-500/20 hover:border-purple-400/50 hover:bg-purple-500/5 text-purple-300'
+            }`}
+          >
+            ISTE MBU Roles
+          </button>
+        </div>
 
-              <div className="glass-panel p-6 rounded-xl border-cyan-500/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                <div>
-                  <span className="text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 rounded-md uppercase tracking-wider font-semibold">
-                    {item.period}
-                  </span>
-                  <h3 className="font-cyber font-bold text-gray-100 text-lg mt-3 uppercase tracking-wider">{item.role}</h3>
-                  <h4 className="font-tech text-cyan-400 font-medium text-base mb-2">{item.company}</h4>
-                  <p className="text-sm font-tech text-gray-400 leading-relaxed">{item.desc}</p>
+        <div className="relative border-l border-cyan-500/20 max-w-3xl mx-auto pl-6 sm:pl-8">
+          {timeline
+            .filter((item) => {
+              if (activeExpTab === 'nit') {
+                return item.company.includes('NIT Calicut');
+              } else {
+                return item.company.includes('ISTE');
+              }
+            })
+            .map((item, i) => (
+              <div key={i} className="mb-12 relative">
+                {/* Timeline marker */}
+                <div className="absolute -left-[35px] top-1.5 w-6 h-6 rounded-full bg-gray-950 border border-cyan-400 flex items-center justify-center shadow-glow-cyan">
+                  {item.type === 'internship' ? <Briefcase className="w-3.5 h-3.5 text-cyan-400" /> : <Award className="w-3.5 h-3.5 text-purple-400" />}
                 </div>
-                {item.logo && (
-                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-white border border-cyan-500/15 p-1.5 flex items-center justify-center shadow-md self-start md:self-center overflow-hidden">
-                    <img 
-                      src={item.logo} 
-                      alt={item.company} 
-                      className="max-w-full max-h-full object-contain mix-blend-multiply scale-95"
-                    />
+
+                <div className="glass-panel p-6 rounded-xl border-cyan-500/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                  <div>
+                    <span className="text-xs font-mono text-cyan-400 bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 rounded-md uppercase tracking-wider font-semibold">
+                      {item.period}
+                    </span>
+                    <h3 className="font-cyber font-bold text-gray-100 text-lg mt-3 uppercase tracking-wider">{item.role}</h3>
+                    <h4 className="font-tech text-cyan-400 font-medium text-base mb-2">{item.company}</h4>
+                    <p className="text-sm font-tech text-gray-400 leading-relaxed">{item.desc}</p>
                   </div>
-                )}
+                  {item.logo && (
+                    <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-white border border-cyan-500/15 p-1.5 flex items-center justify-center shadow-md self-start md:self-center overflow-hidden">
+                      <img 
+                        src={item.logo} 
+                        alt={item.company} 
+                        className="max-w-full max-h-full object-contain mix-blend-multiply scale-95"
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
 
