@@ -391,11 +391,14 @@ export default function App() {
                     <p className="text-xs font-tech text-gray-400 leading-relaxed max-w-2xl">{item.desc}</p>
                   </div>
                   {item.logo && (
-                    <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-white border border-cyan-500/15 p-1 flex items-center justify-center shadow-md self-start sm:self-center overflow-hidden">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white border border-cyan-500/15 flex items-center justify-center shadow-md self-start sm:self-center overflow-hidden">
                       <img 
                         src={item.logo} 
                         alt={item.company} 
-                        className="max-w-full max-h-full object-contain mix-blend-multiply scale-90"
+                        className={item.company.includes('ISTE') 
+                          ? "w-full h-full object-cover scale-[1.08] rounded-full" 
+                          : "max-w-[85%] max-h-[85%] object-contain mix-blend-multiply scale-90"
+                        }
                       />
                     </div>
                   )}
