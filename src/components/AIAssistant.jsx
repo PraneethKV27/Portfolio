@@ -10,11 +10,14 @@ export default function AIAssistant() {
   const mousePos = useRef({ x: 0, y: 0 });
 
   const speechBubbles = [
-    "👋 Welcome! I'm KORNIPALLI's digital assistant. Explore my projects below!",
-    "💡 Fun fact: KORNIPALLI is an Embedded Systems & VLSI enthusiast!",
-    "🛠️ Check out the Electronics Showcase section. Hover over components to examine specifications!",
-    "📧 Want to collaborate? Head down to the contact terminal to message us directly!",
-    "⚡ Circuit traces on the background are active! They respond to page flow!"
+    "👋 Welcome! I'm KVP's digital guide.\n🚀 Quest: Try navigating the tabs to see the page slide-fold like paper!",
+    "💡 'Hardware is the body of technology, firmware is the soul, and software is the clothing.' Let's create!",
+    "⚡ Quest: Toggle the lightbulb icon in the navbar to watch the PCB background circuits dynamically rewrite!",
+    "🔮 'The microchip is to the 21st century what the steam engine was to the 19th.' ECE is everywhere!",
+    "🛠️ Quest: Go to the 'Showcase' tab and find the STM32 board. Hover to check out its circuit layout!",
+    "🧠 ECE Fun Fact: Transistors are basically microscopic electronic valves, and we can pack billions onto a fingernail!",
+    "📧 Quest: Scroll to the 'Contact Terminal' and send a secure transmission to establish contact!",
+    "🤖 'Programming is explaining to a computer what you want it to do, but electronics is giving it the hands to do it.'"
   ];
 
   const [isFollowing, setIsFollowing] = useState(false);
