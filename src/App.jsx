@@ -131,16 +131,16 @@ export default function App({ activeSection, setActiveSection }) {
   return (
     <div className="relative min-h-screen text-gray-100 cyber-grid select-none overflow-x-hidden pt-20 flex flex-col justify-between">
       {/* 3D Page flip container */}
-      <div style={{ perspective: '1500px', transformStyle: 'preserve-3d' }} className="flex-grow w-full relative flex flex-col justify-start">
+      <div style={{ perspective: '2500px', transformStyle: 'preserve-3d' }} className="flex-grow w-full relative flex flex-col justify-start">
         <AnimatePresence mode="wait">
           {activeSection === 'home' && (
             <motion.section
               key="home"
               id="home"
-              initial={{ rotateY: 90, opacity: 0 }}
+              initial={{ rotateY: 30, opacity: 0, x: 50 }}
               animate={{ rotateY: 0, opacity: 1 }}
-              exit={{ rotateY: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ rotateY: -30, opacity: 0, x: -50 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="min-h-[calc(100vh-80px)] flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -201,10 +201,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="about"
               id="about"
-              initial={{ rotateY: 90, opacity: 0 }}
+              initial={{ rotateY: 30, opacity: 0, x: 50 }}
               animate={{ rotateY: 0, opacity: 1 }}
-              exit={{ rotateY: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ rotateY: -30, opacity: 0, x: -50 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -252,10 +252,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="skills"
               id="skills"
-              initial={{ rotateY: 90, opacity: 0 }}
+              initial={{ rotateY: 30, opacity: 0, x: 50 }}
               animate={{ rotateY: 0, opacity: 1 }}
-              exit={{ rotateY: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ rotateY: -30, opacity: 0, x: -50 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -329,10 +329,10 @@ export default function App({ activeSection, setActiveSection }) {
           {activeSection === 'showcase' && (
             <motion.div
               key="showcase"
-              initial={{ rotateY: 90, opacity: 0 }}
+              initial={{ rotateY: 30, opacity: 0, x: 50 }}
               animate={{ rotateY: 0, opacity: 1 }}
-              exit={{ rotateY: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ rotateY: -30, opacity: 0, x: -50 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="w-full"
             >
@@ -344,10 +344,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="projects"
               id="projects"
-              initial={{ rotateY: 90, opacity: 0 }}
+              initial={{ rotateY: 30, opacity: 0, x: 50 }}
               animate={{ rotateY: 0, opacity: 1 }}
-              exit={{ rotateY: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ rotateY: -30, opacity: 0, x: -50 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -396,10 +396,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="experience"
               id="experience"
-              initial={{ rotateY: 90, opacity: 0 }}
+              initial={{ rotateY: 30, opacity: 0, x: 50 }}
               animate={{ rotateY: 0, opacity: 1 }}
-              exit={{ rotateY: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ rotateY: -30, opacity: 0, x: -50 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -482,10 +482,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="certifications"
               id="certifications"
-              initial={{ rotateY: 90, opacity: 0 }}
+              initial={{ rotateY: 30, opacity: 0, x: 50 }}
               animate={{ rotateY: 0, opacity: 1 }}
-              exit={{ rotateY: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ rotateY: -30, opacity: 0, x: -50 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -521,10 +521,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="contact"
               id="contact"
-              initial={{ rotateY: 90, opacity: 0 }}
+              initial={{ rotateY: 30, opacity: 0, x: 50 }}
               animate={{ rotateY: 0, opacity: 1 }}
-              exit={{ rotateY: -90, opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ rotateY: -30, opacity: 0, x: -50 }}
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
