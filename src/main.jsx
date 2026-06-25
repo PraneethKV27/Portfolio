@@ -30,6 +30,39 @@ function Main() {
     }
   }, [darkMode]);
 
+  // Handle keyboard arrow key navigation
+  React.useEffect(() => {
+    const sections = ['home', 'about', 'skills', 'showcase', 'projects', 'experience', 'certifications', 'contact'];
+    
+    const handleKeyDown = (e) => {
+      const activeEl = document.activeElement;
+      if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable)) {
+        return;
+      }
+
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        setActiveSection((prev) => {
+          const idx = sections.indexOf(prev);
+          const nextIdx = (idx + 1) % sections.length;
+          return sections[nextIdx];
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        setActiveSection((prev) => {
+          const idx = sections.indexOf(prev);
+          const prevIdx = (idx - 1 + sections.length) % sections.length;
+          return sections[prevIdx];
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const toggleAudio = () => {
     if (!audioPlaying) {
       if (!audioContextRef.current) {
