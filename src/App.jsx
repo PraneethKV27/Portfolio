@@ -630,9 +630,7 @@ export default function App({ activeSection, setActiveSection }) {
         <p className="flex items-center justify-center gap-2">
           Made with <span className="text-red-500 heartbeat">❤️</span> by KORNIPALLI VENKATESH PRANEETH
         </p>
-        <p className="mt-2 text-gray-600">
-          © {new Date().getFullYear()} KVP.ECE. ALL CIRCUITS OPERATIONAL.
-        </p>
+
       </footer>
     </div>
   );
