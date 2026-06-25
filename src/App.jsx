@@ -140,7 +140,7 @@ export default function App({ activeSection, setActiveSection }) {
               initial={{ x: "100%", scaleX: 0.3, skewX: -15, opacity: 0 }}
               animate={{ x: 0, scaleX: 1, skewX: 0, opacity: 1 }}
               exit={{ x: "-100%", scaleX: 0.3, skewX: 15, opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="min-h-[calc(100vh-80px)] flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -204,7 +204,7 @@ export default function App({ activeSection, setActiveSection }) {
               initial={{ x: "100%", scaleX: 0.3, skewX: -15, opacity: 0 }}
               animate={{ x: 0, scaleX: 1, skewX: 0, opacity: 1 }}
               exit={{ x: "-100%", scaleX: 0.3, skewX: 15, opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -255,7 +255,7 @@ export default function App({ activeSection, setActiveSection }) {
               initial={{ x: "100%", scaleX: 0.3, skewX: -15, opacity: 0 }}
               animate={{ x: 0, scaleX: 1, skewX: 0, opacity: 1 }}
               exit={{ x: "-100%", scaleX: 0.3, skewX: 15, opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -332,7 +332,7 @@ export default function App({ activeSection, setActiveSection }) {
               initial={{ x: "100%", scaleX: 0.3, skewX: -15, opacity: 0 }}
               animate={{ x: 0, scaleX: 1, skewX: 0, opacity: 1 }}
               exit={{ x: "-100%", scaleX: 0.3, skewX: 15, opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="w-full"
             >
@@ -347,7 +347,7 @@ export default function App({ activeSection, setActiveSection }) {
               initial={{ x: "100%", scaleX: 0.3, skewX: -15, opacity: 0 }}
               animate={{ x: 0, scaleX: 1, skewX: 0, opacity: 1 }}
               exit={{ x: "-100%", scaleX: 0.3, skewX: 15, opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -399,7 +399,7 @@ export default function App({ activeSection, setActiveSection }) {
               initial={{ x: "100%", scaleX: 0.3, skewX: -15, opacity: 0 }}
               animate={{ x: 0, scaleX: 1, skewX: 0, opacity: 1 }}
               exit={{ x: "-100%", scaleX: 0.3, skewX: 15, opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -485,7 +485,7 @@ export default function App({ activeSection, setActiveSection }) {
               initial={{ x: "100%", scaleX: 0.3, skewX: -15, opacity: 0 }}
               animate={{ x: 0, scaleX: 1, skewX: 0, opacity: 1 }}
               exit={{ x: "-100%", scaleX: 0.3, skewX: 15, opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -524,7 +524,7 @@ export default function App({ activeSection, setActiveSection }) {
               initial={{ x: "100%", scaleX: 0.3, skewX: -15, opacity: 0 }}
               animate={{ x: 0, scaleX: 1, skewX: 0, opacity: 1 }}
               exit={{ x: "-100%", scaleX: 0.3, skewX: 15, opacity: 0 }}
-              transition={{ duration: 0.85, ease: [0.25, 1, 0.5, 1] }}
+              transition={{ duration: 0.45, ease: [0.25, 1, 0.5, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
