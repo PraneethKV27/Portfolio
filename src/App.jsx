@@ -145,15 +145,7 @@ export default function App({ activeSection, setActiveSection }) {
               className="min-h-[calc(100vh-80px)] flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
               <div className="z-10 text-left max-w-3xl">
-                <motion.div 
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-400/30 rounded-full w-fit mb-6"
-                >
-                  <span className="w-2 h-2 bg-cyan-400 rounded-full animate-ping"></span>
-                  <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-semibold">ECE SYSTEM ONLINE</span>
-                </motion.div>
+
 
                 <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-2">
                   <span className="font-tech text-gray-400 block text-lg uppercase tracking-[0.25em] mb-1">HELLO EVERYONE 👋 I'M</span>
