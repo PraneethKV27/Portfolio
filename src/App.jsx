@@ -166,7 +166,7 @@ export default function App({ activeSection, setActiveSection }) {
                   Electronics & Communication Engineering Student
                 </h2>
                 <p className="mt-4 text-gray-400 font-mono text-sm leading-relaxed max-w-xl">
-                  Embedded Systems • IoT • AI • Robotics • VLSI Enthusiast. Passionate about linking hardware boards, circuits, firmware chips, and web controllers together.
+                  Embedded Systems • IoT • AI • VLSI Enthusiast. Passionate about linking hardware boards, circuits, firmware chips, and web controllers together.
                 </p>
 
                 <div className="mt-10 flex flex-wrap gap-4">
@@ -214,7 +214,7 @@ export default function App({ activeSection, setActiveSection }) {
                     About Me
                   </h2>
                   <p className="text-lg text-gray-300 leading-relaxed font-tech">
-                    KORNIPALLI VENKATESH PRANEETH is an Electronics and Communication Engineering student passionate about Embedded Systems, Internet of Things, Artificial Intelligence, Robotics, and modern electronic technologies. Dedicated to building innovative hardware-software solutions and continuously learning emerging technologies.
+                    KORNIPALLI VENKATESH PRANEETH is an Electronics and Communication Engineering student passionate about Embedded Systems, Internet of Things, Artificial Intelligence, and modern electronic technologies. Dedicated to building innovative hardware-software solutions and continuously learning emerging technologies.
                   </p>
                   <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
                     {stats.map((s, i) => (
