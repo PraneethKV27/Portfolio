@@ -137,10 +137,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="home"
               id="home"
-              initial={{ rotateY: 45, rotateZ: 10, opacity: 0, x: 100 }}
-              animate={{ rotateY: 0, rotateZ: 0, opacity: 1, x: 0 }}
-              exit={{ rotateY: -80, rotateZ: -12, opacity: 0, x: -100 }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+              initial={{ rotateY: 20, rotateZ: 10, skewY: 10, scaleX: 0.7, scaleY: 0.9, opacity: 0, x: 150 }}
+              animate={{ rotateY: 0, rotateZ: 0, skewY: 0, scaleX: 1, scaleY: 1, opacity: 1, x: 0 }}
+              exit={{ rotateY: -35, rotateZ: -15, skewY: -12, scaleX: 0.6, scaleY: 0.9, opacity: 0, x: -150 }}
+              transition={{ duration: 1.0, ease: [0.25, 0.8, 0.25, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="min-h-[calc(100vh-80px)] flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -201,10 +201,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="about"
               id="about"
-              initial={{ rotateY: 45, rotateZ: 10, opacity: 0, x: 100 }}
-              animate={{ rotateY: 0, rotateZ: 0, opacity: 1, x: 0 }}
-              exit={{ rotateY: -80, rotateZ: -12, opacity: 0, x: -100 }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+              initial={{ rotateY: 20, rotateZ: 10, skewY: 10, scaleX: 0.7, scaleY: 0.9, opacity: 0, x: 150 }}
+              animate={{ rotateY: 0, rotateZ: 0, skewY: 0, scaleX: 1, scaleY: 1, opacity: 1, x: 0 }}
+              exit={{ rotateY: -35, rotateZ: -15, skewY: -12, scaleX: 0.6, scaleY: 0.9, opacity: 0, x: -150 }}
+              transition={{ duration: 1.0, ease: [0.25, 0.8, 0.25, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -252,10 +252,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="skills"
               id="skills"
-              initial={{ rotateY: 45, rotateZ: 10, opacity: 0, x: 100 }}
-              animate={{ rotateY: 0, rotateZ: 0, opacity: 1, x: 0 }}
-              exit={{ rotateY: -80, rotateZ: -12, opacity: 0, x: -100 }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+              initial={{ rotateY: 20, rotateZ: 10, skewY: 10, scaleX: 0.7, scaleY: 0.9, opacity: 0, x: 150 }}
+              animate={{ rotateY: 0, rotateZ: 0, skewY: 0, scaleX: 1, scaleY: 1, opacity: 1, x: 0 }}
+              exit={{ rotateY: -35, rotateZ: -15, skewY: -12, scaleX: 0.6, scaleY: 0.9, opacity: 0, x: -150 }}
+              transition={{ duration: 1.0, ease: [0.25, 0.8, 0.25, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -329,10 +329,10 @@ export default function App({ activeSection, setActiveSection }) {
           {activeSection === 'showcase' && (
             <motion.div
               key="showcase"
-              initial={{ rotateY: 45, rotateZ: 10, opacity: 0, x: 100 }}
-              animate={{ rotateY: 0, rotateZ: 0, opacity: 1, x: 0 }}
-              exit={{ rotateY: -80, rotateZ: -12, opacity: 0, x: -100 }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+              initial={{ rotateY: 20, rotateZ: 10, skewY: 10, scaleX: 0.7, scaleY: 0.9, opacity: 0, x: 150 }}
+              animate={{ rotateY: 0, rotateZ: 0, skewY: 0, scaleX: 1, scaleY: 1, opacity: 1, x: 0 }}
+              exit={{ rotateY: -35, rotateZ: -15, skewY: -12, scaleX: 0.6, scaleY: 0.9, opacity: 0, x: -150 }}
+              transition={{ duration: 1.0, ease: [0.25, 0.8, 0.25, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="w-full"
             >
@@ -344,10 +344,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="projects"
               id="projects"
-              initial={{ rotateY: 45, rotateZ: 10, opacity: 0, x: 100 }}
-              animate={{ rotateY: 0, rotateZ: 0, opacity: 1, x: 0 }}
-              exit={{ rotateY: -80, rotateZ: -12, opacity: 0, x: -100 }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+              initial={{ rotateY: 20, rotateZ: 10, skewY: 10, scaleX: 0.7, scaleY: 0.9, opacity: 0, x: 150 }}
+              animate={{ rotateY: 0, rotateZ: 0, skewY: 0, scaleX: 1, scaleY: 1, opacity: 1, x: 0 }}
+              exit={{ rotateY: -35, rotateZ: -15, skewY: -12, scaleX: 0.6, scaleY: 0.9, opacity: 0, x: -150 }}
+              transition={{ duration: 1.0, ease: [0.25, 0.8, 0.25, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -396,10 +396,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="experience"
               id="experience"
-              initial={{ rotateY: 45, rotateZ: 10, opacity: 0, x: 100 }}
-              animate={{ rotateY: 0, rotateZ: 0, opacity: 1, x: 0 }}
-              exit={{ rotateY: -80, rotateZ: -12, opacity: 0, x: -100 }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+              initial={{ rotateY: 20, rotateZ: 10, skewY: 10, scaleX: 0.7, scaleY: 0.9, opacity: 0, x: 150 }}
+              animate={{ rotateY: 0, rotateZ: 0, skewY: 0, scaleX: 1, scaleY: 1, opacity: 1, x: 0 }}
+              exit={{ rotateY: -35, rotateZ: -15, skewY: -12, scaleX: 0.6, scaleY: 0.9, opacity: 0, x: -150 }}
+              transition={{ duration: 1.0, ease: [0.25, 0.8, 0.25, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -482,10 +482,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="certifications"
               id="certifications"
-              initial={{ rotateY: 45, rotateZ: 10, opacity: 0, x: 100 }}
-              animate={{ rotateY: 0, rotateZ: 0, opacity: 1, x: 0 }}
-              exit={{ rotateY: -80, rotateZ: -12, opacity: 0, x: -100 }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+              initial={{ rotateY: 20, rotateZ: 10, skewY: 10, scaleX: 0.7, scaleY: 0.9, opacity: 0, x: 150 }}
+              animate={{ rotateY: 0, rotateZ: 0, skewY: 0, scaleX: 1, scaleY: 1, opacity: 1, x: 0 }}
+              exit={{ rotateY: -35, rotateZ: -15, skewY: -12, scaleX: 0.6, scaleY: 0.9, opacity: 0, x: -150 }}
+              transition={{ duration: 1.0, ease: [0.25, 0.8, 0.25, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
@@ -521,10 +521,10 @@ export default function App({ activeSection, setActiveSection }) {
             <motion.section
               key="contact"
               id="contact"
-              initial={{ rotateY: 45, rotateZ: 10, opacity: 0, x: 100 }}
-              animate={{ rotateY: 0, rotateZ: 0, opacity: 1, x: 0 }}
-              exit={{ rotateY: -80, rotateZ: -12, opacity: 0, x: -100 }}
-              transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
+              initial={{ rotateY: 20, rotateZ: 10, skewY: 10, scaleX: 0.7, scaleY: 0.9, opacity: 0, x: 150 }}
+              animate={{ rotateY: 0, rotateZ: 0, skewY: 0, scaleX: 1, scaleY: 1, opacity: 1, x: 0 }}
+              exit={{ rotateY: -35, rotateZ: -15, skewY: -12, scaleX: 0.6, scaleY: 0.9, opacity: 0, x: -150 }}
+              transition={{ duration: 1.0, ease: [0.25, 0.8, 0.25, 1] }}
               style={{ transformOrigin: "left center", backfaceVisibility: "hidden" }}
               className="py-12 relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
