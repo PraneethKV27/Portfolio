@@ -145,18 +145,16 @@ export default function App({ activeSection, setActiveSection }) {
               className="min-h-[calc(100vh-80px)] flex flex-col justify-center relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full"
             >
               <div className="z-10 text-left max-w-3xl">
-
-
                 <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight mb-2">
                   <span className="font-tech text-gray-400 block text-lg uppercase tracking-[0.25em] mb-1">HELLO EVERYONE 👋 I'M</span>
-                  <span className="font-cyber text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                  <span className="font-cyber text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 drop-shadow-[0_0_15px_rgba(6,182,212,0.3)] block">
                     KORNIPALLI VENKATESH PRANEETH
+                  </span>
+                  <span className="font-tech text-cyan-400 text-sm sm:text-lg block tracking-[0.3em] uppercase mt-3 opacity-95 text-glow-cyan">
+                    DEPARTMENT OF ECE
                   </span>
                 </h1>
 
-                <h2 className="text-xl sm:text-2xl font-semibold font-tech text-gray-300 mt-4 tracking-wide">
-                  Electronics & Communication Engineering Student
-                </h2>
                 <p className="mt-4 text-gray-400 font-mono text-sm leading-relaxed max-w-xl">
                   Embedded Systems • IoT • AI • VLSI Enthusiast. Passionate about linking hardware boards, circuits, firmware chips, and web controllers together.
                 </p>

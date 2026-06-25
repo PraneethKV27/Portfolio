@@ -40,13 +40,16 @@ function Main() {
         return;
       }
 
+      const key = e.key || '';
+      const code = e.code || '';
+
       const isNextKey = 
-        e.key === 'ArrowRight' || e.code === 'ArrowRight' || e.key === 'Right' ||
-        e.key === 'ArrowDown' || e.code === 'ArrowDown' || e.key === 'Down';
+        key === 'ArrowRight' || code === 'ArrowRight' || key === 'Right' ||
+        key === 'ArrowDown' || code === 'ArrowDown' || key === 'Down';
         
       const isPrevKey = 
-        e.key === 'ArrowLeft' || e.code === 'ArrowLeft' || e.key === 'Left' ||
-        e.key === 'ArrowUp' || e.code === 'ArrowUp' || e.key === 'Up';
+        key === 'ArrowLeft' || code === 'ArrowLeft' || key === 'Left' ||
+        key === 'ArrowUp' || code === 'ArrowUp' || key === 'Up';
 
       if (isNextKey) {
         e.preventDefault();
@@ -67,8 +70,9 @@ function Main() {
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    // Use capture phase (true) to intercept keys before interactive elements consume them
+    window.addEventListener('keydown', handleKeyDown, true);
+    return () => window.removeEventListener('keydown', handleKeyDown, true);
   }, []);
 
   const toggleAudio = () => {
