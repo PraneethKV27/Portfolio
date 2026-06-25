@@ -59,7 +59,7 @@ export default function Navbar({ activeSection, setActiveSection, toggleAudio, a
           className="flex items-center gap-2 font-cyber text-cyan-400 font-bold text-lg tracking-wider text-glow-cyan"
         >
           <Cpu className="w-6 h-6 animate-pulse" />
-          <span>PRANEETH</span>
+          <span className="text-xs sm:text-sm md:text-lg whitespace-nowrap tracking-widest">KORNIPALLI VENKATESH PRANEETH</span>
         </a>
 
         {/* Desktop Navigation Links */}
