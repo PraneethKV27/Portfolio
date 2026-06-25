@@ -40,7 +40,15 @@ function Main() {
         return;
       }
 
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      const isNextKey = 
+        e.key === 'ArrowRight' || e.code === 'ArrowRight' || e.key === 'Right' ||
+        e.key === 'ArrowDown' || e.code === 'ArrowDown' || e.key === 'Down';
+        
+      const isPrevKey = 
+        e.key === 'ArrowLeft' || e.code === 'ArrowLeft' || e.key === 'Left' ||
+        e.key === 'ArrowUp' || e.code === 'ArrowUp' || e.key === 'Up';
+
+      if (isNextKey) {
         e.preventDefault();
         setActiveSection((prev) => {
           const idx = sections.indexOf(prev);
@@ -48,7 +56,7 @@ function Main() {
           return sections[nextIdx];
         });
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      } else if (isPrevKey) {
         e.preventDefault();
         setActiveSection((prev) => {
           const idx = sections.indexOf(prev);
