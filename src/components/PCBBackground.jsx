@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-export default function PCBBackground() {
+export default function PCBBackground({ darkMode = true }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -20,7 +20,6 @@ export default function PCBBackground() {
     // Nodes representing ECE circuit components & terminals
     const nodes = [];
     const traces = [];
-    const particles = [];
     const nodeCount = Math.floor((canvas.width * canvas.height) / 18000);
 
     // Generate random electronic nodes (junctions, resistors, IC pins)
@@ -37,7 +36,6 @@ export default function PCBBackground() {
 
     // Connect nodes to create PCB trace patterns (prefer 90/45 degree angles for realism)
     for (let i = 0; i < nodes.length; i++) {
-      let connections = 0;
       const sorted = [...nodes]
         .map((n, idx) => ({ idx, dist: Math.hypot(n.x - nodes[i].x, n.y - nodes[i].y) }))
         .filter(n => n.dist > 0 && n.dist < 200)
@@ -58,11 +56,11 @@ export default function PCBBackground() {
     const animate = () => {
       time += 0.01;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#030712';
+      ctx.fillStyle = darkMode ? '#030712' : '#f8fafc';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Subtle Grid overlay
-      ctx.strokeStyle = 'rgba(59, 130, 246, 0.02)';
+      ctx.strokeStyle = darkMode ? 'rgba(59, 130, 246, 0.02)' : 'rgba(6, 182, 212, 0.06)';
       ctx.lineWidth = 1;
       const gridSize = 40;
       for (let x = 0; x < canvas.width; x += gridSize) {
@@ -81,11 +79,17 @@ export default function PCBBackground() {
       // Draw PCB traces (lines connecting junctions)
       ctx.lineWidth = 1.5;
       traces.forEach(trace => {
-        const opacity = 0.05 + Math.sin(time + trace.from.pulseOffset) * 0.02;
-        ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
+        const opacity = darkMode 
+          ? (0.05 + Math.sin(time + trace.from.pulseOffset) * 0.02)
+          : (0.12 + Math.sin(time + trace.from.pulseOffset) * 0.04);
+        
+        ctx.strokeStyle = darkMode 
+          ? `rgba(6, 182, 212, ${opacity})`
+          : `rgba(9, 79, 114, ${opacity})`;
+          
         ctx.beginPath();
         ctx.moveTo(trace.from.x, trace.from.y);
-        // Draw with a 45-degree angle bending to targets for authentic ECE trace aesthetic
+        
         const dx = trace.to.x - trace.from.x;
         const dy = trace.to.y - trace.from.y;
         if (Math.abs(dx) > Math.abs(dy)) {
@@ -102,9 +106,18 @@ export default function PCBBackground() {
 
         const currentX = trace.from.x + (trace.to.x - trace.from.x) * trace.currentPct;
         const currentY = trace.from.y + (trace.to.y - trace.from.y) * trace.currentPct;
-        ctx.fillStyle = trace.from.color === '#06b6d4' ? '#22d3ee' : '#a78bfa';
-        ctx.shadowColor = ctx.fillStyle;
-        ctx.shadowBlur = 8;
+        
+        const particleColor = trace.from.color === '#06b6d4'
+          ? (darkMode ? '#22d3ee' : '#0891b2')
+          : (darkMode ? '#a78bfa' : '#7c3aed');
+          
+        ctx.fillStyle = particleColor;
+        
+        if (darkMode) {
+          ctx.shadowColor = particleColor;
+          ctx.shadowBlur = 8;
+        }
+        
         ctx.beginPath();
         ctx.arc(currentX, currentY, 2, 0, Math.PI * 2);
         ctx.fill();
@@ -114,16 +127,21 @@ export default function PCBBackground() {
       // Draw nodes (Junctions, IC terminals)
       nodes.forEach(node => {
         const glow = 2 + Math.abs(Math.sin(time + node.pulseOffset)) * 4;
-        ctx.fillStyle = node.color;
-        ctx.shadowColor = node.color;
-        ctx.shadowBlur = glow;
+        const nodeColor = node.color === '#06b6d4'
+          ? (darkMode ? '#06b6d4' : '#0891b2')
+          : (darkMode ? '#8b5cf6' : '#7c3aed');
+          
+        ctx.fillStyle = nodeColor;
+        
+        if (darkMode) {
+          ctx.shadowColor = nodeColor;
+          ctx.shadowBlur = glow;
+        }
         
         ctx.beginPath();
         if (node.type === 'ic') {
-          // Draw mini square IC controllers
           ctx.rect(node.x - 3, node.y - 3, 6, 6);
         } else {
-          // Circle junctions
           ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
         }
         ctx.fill();
@@ -139,7 +157,7 @@ export default function PCBBackground() {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [darkMode]);
 
   return <canvas ref={canvasRef} className="fixed inset-0 -z-10 block pointer-events-none" />;
 }
